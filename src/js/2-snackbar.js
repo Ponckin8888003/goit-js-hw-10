@@ -1,6 +1,4 @@
-// Описаний у документації
 import iziToast from 'izitoast';
-// Додатковий імпорт стилів
 import 'izitoast/dist/css/iziToast.min.css';
 
 let delayValue = document.querySelector('input[name="delay"]');
@@ -20,17 +18,18 @@ form.addEventListener('submit', function (event) {
       }
     }, delay);
   });
+
   promise
     .then(value => {
       iziToast.success({
         title: '',
-        message: `Fulfilled promise in ${delay}ms`,
+        message: `Fulfilled promise in ${value}ms`,
       });
     })
     .catch(error => {
       iziToast.error({
         title: '',
-        message: `Rejected promise in ${delay}ms`,
+        message: `Rejected promise in ${error}ms`,
       });
     })
     .finally(() => {
